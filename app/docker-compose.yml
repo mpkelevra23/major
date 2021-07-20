@@ -1,0 +1,37 @@
+version: '3'
+
+# Networks
+networks:
+  major-network:
+    driver: bridge
+
+# Services
+services:
+  # web service
+  web:
+    image: library/nginx:1.19
+    container_name: web
+    ports:
+      - 80:80
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/www/major:rw
+      - ./.docker/nginx/conf.d/major.conf:/etc/nginx/conf.d/major.conf:rw
+    depends_on:
+      - php-fpm
+    networks:
+      - major-network
+  # PHP-FPM service
+  php-fpm:
+    build:
+      context: .docker/php/
+    container_name: php-fpm
+    working_dir: /var/www/major
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/www/major:rw
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini:ro
+    networks:
+      - major-network
