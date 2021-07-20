@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     tty: true
     volumes:
-      - ../:/var/www/major:rw
+      - ../:/var/www/major.local:rw
       - ./.docker/nginx/conf.d/major.conf:/etc/nginx/conf.d/major.conf:rw
     depends_on:
       - php-fpm
@@ -27,11 +27,11 @@ services:
     build:
       context: .docker/php/
     container_name: php-fpm
-    working_dir: /var/www/major
+    working_dir: /var/www/major.local
     restart: unless-stopped
     tty: true
     volumes:
-      - ../:/var/www/major:rw
+      - ../:/var/www/major.local:rw
       - ./.docker/php/php.ini:/usr/local/etc/php/php.ini:ro
     networks:
       - major-network
