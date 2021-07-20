@@ -1,0 +1,24 @@
+{
+  "name": "mpkelevra23/major.local",
+  "description": "Test project for major company",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "mpkelevra23",
+      "email": "email@example.com"
+    }
+  ],
+
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "ext-xdebug": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Major\\controllers\\": "controllers",
+      "Major\\components\\": "components"
+    }
+  }
+}

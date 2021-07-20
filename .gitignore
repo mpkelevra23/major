@@ -1,2 +1,5 @@
 .idea
 logs
+app/composer.phar
+app/composer.lock
+app/vendor
