@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content";
+    grid-template-rows: 60px calc(100vh - 60px);
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    max-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+header {
+    border-bottom: 1px solid #0000001A;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin: 0 0 0 100px;
+    background-color: #1082D2;
+}
+
+.logo a {
+    text-align: center;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    line-height: 60px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.content {
+    grid-area: content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.request {
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin: 0 15px;
+}
+
+input,
+input:active,
+input:focus {
+    outline: 0 !important;
+    margin: 10px 0;
+}
+
+.caption {
+    font-family: 'Poppins', sans-serif;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+input[type=text] {
+    padding: 0 0 0 10px;
+    border: 1px solid #ECECEC;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+input::placeholder {
+    opacity: 0.5;
+    text-transform: lowercase;
+}
+
+input[type=submit] {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    background-color: #1082D2;
+    cursor: pointer;
+}
+
+@media all and (max-width: 400px) {
+    body {
+        grid-template-rows: 45px calc(100vh - 45px);
+    }
+
+    .logo {
+        height: 45px;
+        width: 45px;
+        margin: 0 0 0 15px;
+    }
+
+    .logo a {
+        line-height: 45px;
+        font-size: 30px;
+    }
+}
