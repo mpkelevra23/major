@@ -7,9 +7,6 @@
 
 body {
     display: grid;
-    grid-template-areas:
-    "header"
-    "content";
     grid-template-rows: 60px calc(100vh - 60px);
     grid-template-columns: 1fr;
     margin: 0 auto;
@@ -23,17 +20,17 @@ a {
 }
 
 header {
-    border-bottom: 1px solid #0000001A;
+    box-shadow: 0 1px 0 #0000001A;
 }
 
-.logo {
+.header_logo {
     height: 60px;
     width: 60px;
     margin: 0 0 0 100px;
     background-color: #1082D2;
 }
 
-.logo a {
+.header_logo a {
     text-align: center;
     display: block;
     font-family: 'Poppins', sans-serif;
@@ -43,18 +40,21 @@ header {
     color: #FFFFFF;
 }
 
-.content {
-    grid-area: content;
-    display: flex;
+.main {
+    display: grid;
+    grid-template-columns: minmax(150px, 350px);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
     align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.request {
+.main_request {
+    align-self: end;
     display: grid;
     grid-template-rows: 0.5fr 0.5fr 1fr 1fr;
     grid-template-columns: 1fr;
-    margin: 0 15px;
 }
 
 input,
@@ -64,7 +64,7 @@ input:focus {
     margin: 10px 0;
 }
 
-.caption {
+.request_caption {
     font-family: 'Poppins', sans-serif;
     line-height: 40px;
     font-size: 30px;
@@ -73,16 +73,14 @@ input:focus {
 
 label {
     font-family: 'Poppins', sans-serif;
-    line-height: 20px;
     font-size: 14px;
 }
 
 input[type=text] {
     padding: 0 0 0 10px;
     border: 1px solid #ECECEC;
-    text-transform: capitalize;
     font-family: 'Poppins', sans-serif;
-    line-height: 40px;
+    height: 38px;
     font-size: 14px;
     font-weight: 400;
 }
@@ -92,16 +90,43 @@ input::placeholder {
     text-transform: lowercase;
 }
 
-input[type=submit] {
+input[type=button] {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    line-height: 40px;
+    height: 40px;
     font-size: 15px;
     font-weight: 700;
     color: #FFFFFF;
-    border: 1px solid transparent;
+    border: 0 solid transparent;
     background-color: #1082D2;
     cursor: pointer;
+}
+
+.main_answer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    align-self: start;
+}
+
+.answer_caption {
+    box-shadow: 0 1px 0 #0000001A;
+    padding: 10px 0;
+    margin: 0 0 30px 0;
+
+}
+
+.answer_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3px;
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+    align-items: center;
+}
+
+.answer_list > li {
+    align-items: center;
+    margin: 0 0 0 15px;
 }
 
 @media all and (max-width: 400px) {
@@ -109,13 +134,13 @@ input[type=submit] {
         grid-template-rows: 45px calc(100vh - 45px);
     }
 
-    .logo {
+    .header_logo {
         height: 45px;
         width: 45px;
         margin: 0 0 0 15px;
     }
 
-    .logo a {
+    .header_logo a {
         line-height: 45px;
         font-size: 30px;
     }
