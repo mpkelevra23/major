@@ -10,19 +10,20 @@
 </head>
 <body>
 <header>
-    <div class="logo">
+    <div class="header_logo">
         <a href="/">M</a>
     </div>
 </header>
-<div class="content">
-    <form action="#" class="request" method="post">
-        <p class="caption">Приложение</p>
+<main class="main">
+    <form action="#" class="main_request request" method="post">
+        <h1 class="request_caption caption">Приложение</h1>
         <label for="palindrome">Веб-приложение, которое находит палиндромы</label>
         <input type="text" name="palindrome" id="palindrome" placeholder="палиндром">
-        <input type="submit" name="submit" value="Найти">
+        <input type="button" id="sendPalindrome" name="submit" value="Найти">
     </form>
-</div>
-<script>
-</script>
+    <div class="main_answer answer" id="answer"></div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/template/js/ajaxRequest.js"></script>
 </body>
 </html>

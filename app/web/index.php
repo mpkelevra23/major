@@ -14,8 +14,5 @@ error_reporting(E_ALL);
 // Подключаем автозагрузку классов composer
 require '../vendor/autoload.php';
 
-// Стартуем сессию
-//session_start();
-
 // Вызов Router
 Router::run();
