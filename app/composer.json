@@ -18,7 +18,8 @@
   "autoload": {
     "psr-4": {
       "Major\\controllers\\": "controllers",
-      "Major\\components\\": "components"
+      "Major\\components\\": "components",
+      "Major\\models\\": "models"
     }
   }
 }
